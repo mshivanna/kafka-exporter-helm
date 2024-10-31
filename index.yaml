@@ -3,7 +3,7 @@ entries:
   kafka-exporter:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-31T11:03:08.922513-04:00"
+    created: "2024-10-31T11:08:01.973158-04:00"
     description: A Helm chart for Kubernetes
     digest: cc78b0f51f7b875ac67939087a3b0f141d9e30b6892c8120c92fdb5829e1e0d8
     home: https://github.com/mshivanna/kafka-exporter-helm
@@ -12,6 +12,6 @@ entries:
       name: Manjunath Shivanna
     name: kafka-exporter
     urls:
-    - .cr-release-packages/kafka-exporter-1.2.0.tgz
+    - https://mshivanna.github.io/kafka-exporter-helm/.cr-release-packages/kafka-exporter-1.2.0.tgz
     version: 1.2.0
-generated: "2024-10-31T11:03:08.920893-04:00"
+generated: "2024-10-31T11:08:01.97046-04:00"
