@@ -4,14 +4,15 @@ HELM INSTALL
 ### Install Basic
 
 ```shell
-helm upgrade -i kafka-exporter kafka_exporter/charts/kafka-exporter --namespace=kafka-exporter --create-namespace \
+helm repo add kafka-exporter-helm https://mshivanna.github.io/kafka-exporter-helm
+helm upgrade -i kafka-exporter kafka-exporter-helm/kafka-exporter --namespace=kafka-exporter --create-namespace \
   --set kafkaExporter.kafka.servers="{kafka1:9092,kafka2:9092,.....}"
 ```
 
 ### Install with Datadog support
 
 ```shell
-helm upgrade -i kafka-exporter kafka_exporter/charts/kafka-exporter --namespace=kafka-exporter --create-namespace \
+helm upgrade -i kafka-exporter kafka-exporter-helm/kafka-exporter --namespace=kafka-exporter --create-namespace \
   --set kafkaExporter.kafka.servers="{kafka1:9092,kafka2:9092,.....}" \
   --set datadog.prefix=testing-kafka-cluster \
   --set datadog.use_datadog=true \
@@ -34,6 +35,6 @@ helm upgrade -i datadog datadog/datadog --namespace=kafka-exporter \
 ### Install with Azure Managed Prometheus support
 
 ```shell
-helm upgrade -i kafka-exporter kafka_exporter/charts/kafka-exporter --namespace=kafka-exporter --create-namespace \
+helm upgrade -i kafka-exporter kafka-exporter-helm/kafka-exporter --namespace=kafka-exporter --create-namespace \
   --set kafkaExporter.kafka.servers="{kafka1:9092,kafka2:9092,.....}" --set prometheus.serviceMonitor.enabled=true --set azuremanagedprometheus.use_azuremanagedprometheus=true
 ```
