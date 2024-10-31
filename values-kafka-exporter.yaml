@@ -1,0 +1,23 @@
+
+kafkaExporter:
+  kafka:
+    servers:
+      - kafka:9092
+prometheus:
+  serviceMonitor:
+    enabled: true
+    namespace: monitoring
+    interval: "30s"
+    additionalLabels:
+      app: kafka-exporter
+
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: torizon.io/nodegroup
+              operator: In
+              values:
+                - core-ota
